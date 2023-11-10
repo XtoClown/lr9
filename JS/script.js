@@ -10,31 +10,30 @@ let playerPoint = 0;
 let botPoint = 0;
 let playerScore = 0;
 let botScore = 0;
+let games = 0;
 function func(trigger){
     while(trigger == 1){
         trigger = 0;
-        if(playerPoint < 3 && botPoint < 3){
+        if(playerPoint < 21 && botPoint < 21 && games < 3){
             playerScore = Math.floor(Math.random()*9);
             botScore = Math.floor(Math.random()*9);
-            if(playerScore>botScore){
-                playerPoint++;
-                if(playerPoint == 3){
-                    winner(0);
-                }
-                document.getElementById("playerPoint").innerHTML = playerPoint;
-                document.getElementById("botPoint").innerHTML = botPoint;
-                cardReplace(playerScore, botScore);
-            }
-            if(botScore>playerScore){
-                botPoint++;
-                if(botPoint == 3){
-                    winner(1);
-                }
-                document.getElementById("playerPoint").innerHTML = playerPoint;
-                document.getElementById("botPoint").innerHTML = botPoint;
-                cardReplace(playerScore, botScore);
-            }
+            playerPoint+=playerScore;
+            botPoint+=botScore;
+            document.getElementById("playerPoint").innerHTML = playerPoint;
+            document.getElementById("botPoint").innerHTML = botPoint;
+            cardReplace(playerScore, botScore);
         }
+    }
+    if(playerPoint > 21){
+        winner(1);
+    }
+    if(botPoint > 21){
+        winner(0);
+    }
+    if(games == 3){
+        if(playerPoint>botPoint)setTimeout(()=>winner(0),500);
+        if(botPoint>playerPoint)setTimeout(()=>winner(1),500);
+        if(botPoint == playerPoint)setTimeout(()=>winner(2),500);
     }
 }
 function cardReplace(playerScore, botScore){
@@ -84,6 +83,7 @@ function cardReplace(playerScore, botScore){
    let jackK = "Cards/jackK.svg";
    let jackArray = [jackP, jackC, jackB, jackK];
    if(playerScore != botScore){
+    games++;
     if(playerScore == 0){
         let cardSuit = Math.floor(Math.random()*4);
         document.querySelector("#playerCardHolder").src = jackArray[cardSuit];
@@ -202,6 +202,37 @@ function winner(win){
         },1500);
     }
     if(win == 1){
+        document.getElementById("botName").style.background = "linear-gradient(#567258, #2b552f)";
+        document.getElementById("botName").style.border = "0.3rem solid #102712";
+        document.getElementById("botName").style.color = "#102712";
+        document.getElementById("pointB").style.background = "linear-gradient(#567258, #2b552f)";
+        document.getElementById("pointB").style.border = "0.3rem solid #102712";
+        document.getElementById("pointB").style.color = "#102712";
+        document.getElementById("scoreB").style.background = "linear-gradient(#567258, #2b552f)";
+        document.getElementById("scoreB").style.border = "0.3rem solid #102712";
+        document.getElementById("scoreB").style.color = "#102712";
+        document.querySelector("#botCardHolder").style.background = "#102712";
+        document.querySelector("#botCardHolder").style.border = "0.3rem solid #102712";
+        document.querySelector("#pointB").innerHTML = "WINNER!";
+        document.querySelector("#scoreB").innerHTML = "WINNER!";
+        setTimeout(()=>{
+            location.reload();
+        },1500);
+    }
+    if(win == 2){
+        document.getElementById("userName").style.background = "linear-gradient(#567258, #2b552f)";
+        document.getElementById("userName").style.border = "0.3rem solid #102712";
+        document.getElementById("userName").style.color = "#102712";
+        document.getElementById("pointP").style.background = "linear-gradient(#567258, #2b552f)";
+        document.getElementById("pointP").style.border = "0.3rem solid #102712";
+        document.getElementById("pointP").style.color = "#102712";
+        document.getElementById("scoreP").style.background = "linear-gradient(#567258, #2b552f)";
+        document.getElementById("scoreP").style.border = "0.3rem solid #102712";
+        document.getElementById("scoreP").style.color = "#102712";
+        document.querySelector("#playerCardHolder").style.backgroundColor = "#102712";
+        document.querySelector("#playerCardHolder").style.border = "0.3rem solid #102712";
+        document.querySelector("#pointP").innerHTML = "WINNER!";
+        document.querySelector("#scoreP").innerHTML = "WINNER!";
         document.getElementById("botName").style.background = "linear-gradient(#567258, #2b552f)";
         document.getElementById("botName").style.border = "0.3rem solid #102712";
         document.getElementById("botName").style.color = "#102712";
