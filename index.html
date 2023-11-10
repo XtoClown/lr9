@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lr9</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+        <script src="JS/script.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="main">
+            <div class="menu">
+                <div class="playerZone">
+                    <div class="name" id="userName"></div>
+                    <div class="point" id="pointP">Points:
+                        <div class="points" id="playerPoint">0</div>
+                    </div>
+                    <div class="pointScore" id="scoreP">
+                        <div>Card Value:</div> 
+                        <div class="points" id="playerPointCard"></div>
+                    </div>
+                    <div class="card">
+                        <img src="back.jpg" alt="image" id="playerCardHolder">
+                    </div>
+                </div>
+                <div class="gameMenu" id="gameMenu">
+                    <button onclick="func(1);" id="gameStartButton">Play</button>
+                </div>
+                <div class="botZone">
+                    <div class="name" id="botName">Bot</div>
+                    <div class="point" id="pointB">
+                        <div>Points:</div>
+                        <div class="points" id="botPoint">0</div>
+                    </div>
+                    <div class="pointScore" id="scoreB">
+                        <div>Card Value:</div> 
+                        <div class="points" id="botPointCard"></div>
+                    </div>
+                    <div class="card">
+                        <img src="back.jpg" alt="image" id="botCardHolder">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

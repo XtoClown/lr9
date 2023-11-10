@@ -1,0 +1,133 @@
+html, body{
+    height:100%;
+    width:100%;
+    margin:0px;
+    background:linear-gradient(#cbadd6,#c595d8);
+    font-family: 'Quicksand', sans-serif;
+    color:#fcf5bc;
+}
+.main{
+    height:100%;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr;
+    justify-items:center;
+    align-items:center;
+}
+.menu{
+    height:80%;
+    width:70%;
+    background:linear-gradient(#5f3f88,#55387c);
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:1fr;
+    justify-items:center;
+    align-items:center;
+    border:0.67rem solid #fcf5bc;
+    border-radius:3rem;
+}
+.playerZone{
+    height:100%;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr 1fr 1fr 3fr;
+    justify-items:center;
+    align-items:center;
+}
+.botZone{
+    height:100%;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr 1fr 1fr 3fr;
+    justify-items:center;
+    align-items:center;
+}
+.name{
+    height:65%;
+    width:60%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr;
+    justify-items:center;
+    align-items:center;
+    font-size:4vmin;
+    background:linear-gradient(#cbadd6,#c595d8);
+    border:0.3rem solid #fcf5bc;
+    border-radius:1.4vh;
+}
+.point{
+    height:65%;
+    width:60%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2.8vmin;
+    background:linear-gradient(#cbadd6,#c595d8);
+    border:0.3rem solid #fcf5bc;
+    border-radius:1.4vh;
+}
+.pointScore{
+    height:65%;
+    width:60%;
+    display:flex;
+    justify-content:center; 
+    align-items:center;
+    font-size:2.8vmin;
+    background:linear-gradient(#cbadd6,#c595d8);
+    border:0.3rem solid #fcf5bc;
+    border-radius:1.4vh;
+}
+.card{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr;
+    justify-content:center;
+    align-items:center;
+}
+.card img{
+    height:100%;
+    width:11.4vw;
+    border-radius:1.4vh;
+}
+.points{
+    text-indent:1vw;
+}
+.gameMenu{
+    height:100%;
+    width:60%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr;
+    justify-items:center;
+    align-items:center;
+}
+.gameMenu button{
+    height:10%;
+    width:100%;
+    border-radius:1.5rem;
+    background:linear-gradient(#cbadd6,#c595d8);
+    border:0.2rem solid #fcf5bc;
+    font-family: 'Quicksand', sans-serif;
+    color:#fcf5bc;
+    font-size:3.5vmin;
+}
+@media (100px <= width <= 1200px){
+    .pointScore{
+        font-size:2vmin;
+    }
+    .card img{
+        height:100%;
+        width:14vw;
+        border-radius:1.4vh;
+    }
+}
+@media (100px <= height <= 700px){
+    .card img{
+        height:35vmin;
+        width:14vw;
+        border-radius:1.4vh;
+    }
+}
